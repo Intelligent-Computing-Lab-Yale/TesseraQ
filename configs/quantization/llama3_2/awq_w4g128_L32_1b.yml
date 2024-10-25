@@ -1,0 +1,45 @@
+base:
+    seed: &seed 42
+model:
+    type: Llama
+    path: meta-llama/Llama-3.2-1B
+    torch_dtype: auto
+calib:
+    name: pileval
+    download: False
+    path: ../cache/data/calib/pileval
+    n_samples: 128
+    bs: -1
+    seq_len: 512
+    preproc: pileval_awq
+    seed: *seed
+eval:
+    eval_pos: [fake_quant]
+    name: [wikitext2, c4]
+    download: False
+    path: ../cache/data/eval
+    bs: 1
+    inference_per_block: False
+    seq_len: 2048
+    tasks: piqa,arc_easy,arc_challenge,hellaswag,winogrande
+quant:
+    method: Awq
+    weight:
+        bit: 4
+        symmetric: False
+        granularity: per_group
+        group_size: 128
+        calib_algo: learnable
+    special:
+        trans: True
+        weight_clip: True
+        save_scale: True
+        clip_version: v1
+        scale_path: ../cache/activations/L32_1b/awq_w4g128
+        save_clip: False
+        clip_path: ../cache/activations/L32_1b/awq_w4g128
+save:
+    save_fp: False
+    save_lightllm: False
+    save_vllm: False
+    save_trans: False
