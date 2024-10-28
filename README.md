@@ -4,6 +4,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2410.19103-b31b1b.svg)](https://arxiv.org/abs/2410.19103)
 
+[//]: # (**\[ English | [中文]&#40;README_zh.md&#41; \]**)
 
 **TesseraQ** is a block reconstruction-based PTQ algorithm for Large Language Models, achieving state-of-the-art uniform quantization performance under INT2/INT3/INT4 format. 
 
@@ -13,7 +14,7 @@
 
 * **Oct 28, 2024:** 🍺🍺🍺 We release our arXiv paper:
 
-  [**TesseraQ: Ultra Low-Bit LLM Post-Training Quantization with Block Reconstruction**](https://arxiv.org/abs/2405.06001).
+  [**TesseraQ: Ultra Low-Bit LLM Post-Training Quantization with Block Reconstruction**](https://arxiv.org/abs/2410.19103).
 
 * **Oct 26, 2024:** Our method is integrated into [LLMC](https://github.com/ModelTC/llmc/tree/main) framework. 
 
