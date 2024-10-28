@@ -2,7 +2,7 @@
 
 <img src="./imgs/tesseraq.png" alt="llmc" style="zoom:35%;" />
 
-[![arXiv](https://img.shields.io/badge/LLM--QBench-2405.06001-b31b1b)](https://arxiv.org/abs/2405.06001)
+[![arXiv](https://img.shields.io/badge/arXiv-2410.19103-b31b1b.svg)](https://arxiv.org/abs/2410.19103)
 
 
 **TesseraQ** is a block reconstruction-based PTQ algorithm for Large Language Models, achieving state-of-the-art uniform quantization performance under INT2/INT3/INT4 format. 
@@ -11,12 +11,11 @@
 
 ## News
 
-* **Oct 27, 2024:** 🍺🍺🍺 We release our arXiv paper:
+* **Oct 28, 2024:** 🍺🍺🍺 We release our arXiv paper:
 
   [**TesseraQ: Ultra Low-Bit LLM Post-Training Quantization with Block Reconstruction**](https://arxiv.org/abs/2405.06001).
 
-
-* **Oct 25, 2024:** The LLMC framework has integrated TesseraQ. 
+* **Oct 26, 2024:** Our method is integrated into [LLMC](https://github.com/ModelTC/llmc/tree/main) framework. 
 
 ## Highlight Features
 
@@ -68,13 +67,14 @@ cd scripts
 sh run_llama2.sh
 ```
 
-| Model     | 7B                                                              | 13B                                                              | 70B                                                              |
-|-----------|-----------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------------------|
-| W2A16     | [8.05](./configs/quantization/llama2/tesseraq_w2_L2_7b.yml)     | [6.55](./configs/quantization/llama2/tesseraq_w2_L2_13b.yml)     | [5.26](./configs/quantization/llama2/tesseraq_w2_L2_70b.yml)     |
-| W2A16g128 | [6.82](./configs/quantization/llama2/tesseraq_w2g128_L2_7b.yml) | [5.81](./configs/quantization/llama2/tesseraq_w2g128_L2_13b.yml) | [4.60](./configs/quantization/llama2/tesseraq_w2g128_L2_70b.yml) |
-| W3A16     | [5.84](./configs/quantization/llama2/tesseraq_w3_L2_7b.yml)     | [5.16](./configs/quantization/llama2/tesseraq_w3_L2_13b.yml)     | [3.68](./configs/quantization/llama2/tesseraq_w3_L2_70b.yml)     |
-| W3A16g128 | [5.71](./configs/quantization/llama2/tesseraq_w3g128_L2_7b.yml) | [5.11](./configs/quantization/llama2/tesseraq_w3g128_L2_13b.yml) | [3.61](./configs/quantization/llama2/tesseraq_w3g128_L2_70b.yml) |
-| W4A16     | [5.56](./configs/quantization/llama2/tesseraq_w4_L2_7b.yml)     | [4.96](./configs/quantization/llama2/tesseraq_w4_L2_13b.yml)     | [3.40](./configs/quantization/llama2/tesseraq_w4_L2_70b.yml)     |
+| Model     | 7B                                                 | 13B                                                 | 70B                                                 |
+|-----------|----------------------------------------------------|-----------------------------------------------------|-----------------------------------------------------|
+| W2A16     | [8.05](./configs/llama2/tesseraq_w2_L2_7b.yml)     | [6.55](./configs/llama2/tesseraq_w2_L2_13b.yml)     | [5.26](./configs/llama2/tesseraq_w2_L2_70b.yml)     |
+| W2A16g128 | [6.82](./configs/llama2/tesseraq_w2g64_L2_7b.yml)  | [5.92](./configs/llama2/tesseraq_w2g64_L2_13b.yml)  | [4.73](./configs/llama2/tesseraq_w2g64_L2_70b.yml)  |
+| W2A16g64  | [6.67](./configs/llama2/tesseraq_w2g128_L2_7b.yml) | [5.81](./configs/llama2/tesseraq_w2g128_L2_13b.yml) | [4.60](./configs/llama2/tesseraq_w2g128_L2_70b.yml) |
+| W3A16     | [5.84](./configs/llama2/tesseraq_w3_L2_7b.yml)     | [5.16](./configs/llama2/tesseraq_w3_L2_13b.yml)     | [3.68](./configs/llama2/tesseraq_w3_L2_70b.yml)     |
+| W3A16g128 | [5.71](./configs/llama2/tesseraq_w3g128_L2_7b.yml) | [5.11](./configs/llama2/tesseraq_w3g128_L2_13b.yml) | [3.61](./configs/llama2/tesseraq_w3g128_L2_70b.yml) |
+| W4A16     | [5.56](./configs/llama2/tesseraq_w4_L2_7b.yml)     | [4.96](./configs/llama2/tesseraq_w4_L2_13b.yml)     | [3.40](./configs/llama2/tesseraq_w4_L2_70b.yml)     |
 
 (Note that the above srcipts can also be used to reproduce LLaMA-7B/13B/30B/66B models)
 
@@ -85,10 +85,10 @@ cd scripts
 sh run_llama3_1.sh
 ```
 
-| Model     | 8B                                                                  | 70B                                                                  |
-|-----------|---------------------------------------------------------------------|----------------------------------------------------------------------|
-| W2A16g128 | [59.37](./configs/quantization/llama3_1/tesseraq_w2g128_L31_8b.yml) | [66.76](./configs/quantization/llama3_1/tesseraq_w2g128_L31_70b.yml) |
-| W3A16g128 | [67.36](./configs/quantization/llama3_1/tesseraq_w3g128_L31_8b.yml) | [74.09](./configs/quantization/llama3_1/tesseraq_w3g128_L31_70b.yml) |
+| Model     | 8B                                                     | 70B                                                     |
+|-----------|--------------------------------------------------------|---------------------------------------------------------|
+| W2A16g128 | [59.37](./configs/llama3_1/tesseraq_w2g128_L31_8b.yml) | [66.76](./configs/llama3_1/tesseraq_w2g128_L31_70b.yml) |
+| W3A16g128 | [67.36](./configs/llama3_1/tesseraq_w3g128_L31_8b.yml) | [74.09](./configs/llama3_1/tesseraq_w3g128_L31_70b.yml) |
 
 ### LLaMA-3.2 for Edge Device
 
@@ -97,22 +97,25 @@ cd scripts
 sh run_llama3_2.sh
 ```
 
-| Model        | Method   | Bit    | Wiki ppl. | Avg. Acc | Scripts                                                            |
-|--------------|----------|--------|-----------|----------|--------------------------------------------------------------------|
-| LLaMA-3.2-1B | Pretrain | FP16   | 9.75      | 56.50    | -                                                                  |
-| LLaMA-3.2-1B | AWQ      | W2g128 | 5475      | 35.42    | [here](./configs/quantization/llama3_2/awq_w2g128_L32_1b.yml)      |
-| LLaMA-3.2-1B | TesseraQ | W2g128 | 18.61     | 43.36    | [here](./configs/quantization/llama3_2/tesseraq_w2g128_L32_1b.yml) |
-| LLaMA-3.2-1B | AWQ      | W3g128 | 16.69     | 49.85    | [here](./configs/quantization/llama3_2/awq_w3g128_L32_1b.yml)      |
-| LLaMA-3.2-1B | TesseraQ | W3g128 | 11.08     | 53.24    | [here](./configs/quantization/llama3_2/tesseraq_w3g128_L32_1b.yml) |
-| LLaMA-3.2-1B | AWQ      | W4g128 | 10.85     | 54.68    | [here](./configs/quantization/llama3_2/awq_w4g128_L32_1b.yml)      |
-| LLaMA-3.2-1B | TesseraQ | W4g128 | 10.09     | 54.98    | [here](./configs/quantization/llama3_2/tesseraq_w4g128_L32_1b.yml) |
-| LLaMA-3.2-3B | Pretrain | FP16   | 7.81      | 63.57    | -                                                                  |
-| LLaMA-3.2-3B | AWQ      | W2g128 | 495.2     | 38.15    | [here](./configs/quantization/llama3_2/awq_w2g128_L32_3b.yml)      |
-| LLaMA-3.2-3B | TesseraQ | W2g128 | 11.94     | 51.53    | [here](./configs/quantization/llama3_2/tesseraq_w2g128_L32_3b.yml) |
-| LLaMA-3.2-3B | AWQ      | W3g128 | 10.21     | 59.94    | [here](./configs/quantization/llama3_2/awq_w3g128_L32_3b.yml)      |
-| LLaMA-3.2-3B | TesseraQ | W3g128 | 8.45      | 61.58    | [here](./configs/quantization/llama3_2/tesseraq_w3g128_L32_3b.yml) |
-| LLaMA-3.2-3B | AWQ      | W4g128 | 8.25      | 62.83    | [here](./configs/quantization/llama3_2/awq_w4g128_L32_3b.yml)      |
-| LLaMA-3.2-3B | TesseraQ | W4g128 | 7.96      | 63.63    | [here](./configs/quantization/llama3_2/tesseraq_w4g128_L32_3b.yml) |
+| Model        | Method   | Bit    | Wiki ppl. | Avg. Acc | Scripts                                               |
+|--------------|----------|--------|-----------|----------|-------------------------------------------------------|
+| LLaMA-3.2-1B | Pretrain | FP16   | 9.75      | 56.50    | -                                                     |
+| LLaMA-3.2-1B | AWQ      | W2g128 | 5475      | 35.42    | [here](./configs/llama3_2/awq_w2g128_L32_1b.yml)      |
+| LLaMA-3.2-1B | TesseraQ | W2g128 | 18.61     | 43.36    | [here](./configs/llama3_2/tesseraq_w2g128_L32_1b.yml) |
+| LLaMA-3.2-1B | AWQ      | W3g128 | 16.69     | 49.85    | [here](./configs/llama3_2/awq_w3g128_L32_1b.yml)      |
+| LLaMA-3.2-1B | TesseraQ | W3g128 | 11.08     | 53.24    | [here](./configs/llama3_2/tesseraq_w3g128_L32_1b.yml) |
+| LLaMA-3.2-1B | AWQ      | W4g128 | 10.85     | 54.68    | [here](./configs/llama3_2/awq_w4g128_L32_1b.yml)      |
+| LLaMA-3.2-1B | TesseraQ | W4g128 | 10.09     | 54.98    | [here](./configs/llama3_2/tesseraq_w4g128_L32_1b.yml) |
+| LLaMA-3.2-3B | Pretrain | FP16   | 7.81      | 63.57    | -                                                     |
+| LLaMA-3.2-3B | AWQ      | W2g128 | 495.2     | 38.15    | [here](./configs/llama3_2/awq_w2g128_L32_3b.yml)      |
+| LLaMA-3.2-3B | TesseraQ | W2g128 | 11.94     | 51.53    | [here](./configs/llama3_2/tesseraq_w2g128_L32_3b.yml) |
+| LLaMA-3.2-3B | AWQ      | W3g128 | 10.21     | 59.94    | [here](./configs/llama3_2/awq_w3g128_L32_3b.yml)      |
+| LLaMA-3.2-3B | TesseraQ | W3g128 | 8.45      | 61.58    | [here](./configs/llama3_2/tesseraq_w3g128_L32_3b.yml) |
+| LLaMA-3.2-3B | AWQ      | W4g128 | 8.25      | 62.83    | [here](./configs/llama3_2/awq_w4g128_L32_3b.yml)      |
+| LLaMA-3.2-3B | TesseraQ | W4g128 | 7.96      | 63.63    | [here](./configs/llama3_2/tesseraq_w4g128_L32_3b.yml) |
+
+## Quantized Checkpoint
+
 
 
 ## Configuration
@@ -291,4 +294,26 @@ Then load the saved checkpoint for TesseraQ and enable `online_rotate` as well a
 
 ## Citation
 
-If you find our LLM-QBench paper/llmc toolkit useful or relevant to your research, please kindly cite our paper:
+If you find our TesseraQ paper useful or relevant to your research, please kindly cite our paper:
+```
+@misc{li2024tesseraq,
+      title={TesseraQ: Ultra Low-Bit LLM Post-Training Quantization with Block Reconstruction},
+      author={Yuhang Li and Priyadarshini Panda},
+      year={2024},
+      eprint={2410.19103},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
+Also consider cite the LLMC framework paper 
+```text
+@misc{gong2024llmcbenchmarkinglargelanguage,
+      title={LLMC: Benchmarking Large Language Model Quantization with a Versatile Compression Toolkit},
+      author={Ruihao Gong and Yang Yong and Shiqiao Gu and Yushi Huang and Chentao Lv and Yunchen Zhang and Xianglong Liu and Dacheng Tao},
+      year={2024},
+      eprint={2405.06001},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2405.06001},
+}
+```
