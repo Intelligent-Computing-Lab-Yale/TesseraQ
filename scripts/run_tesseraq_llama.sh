@@ -5,14 +5,13 @@ export HF_HUB_CACHE="../llmc/cache"
 llmc=/gpfs/gibbs/pi/panda/yl2447/llmc
 export PYTHONPATH=$llmc:$PYTHONPATH
 
-task_name=llama32_awq_tesseraq
-#config=${llmc}/configs/quantization/llama3_2/awq_w2g128_L32_1b.yml
-config=${llmc}/configs/quantization/llama3_2/tesseraq_w2g128_L32_1b.yml
+task_name=llama2_awq_tesseraq
+# be sure to run AWQ first to save the clips/scales
+config=${llmc}/configs/quantization/llama2/tesseraq_w2g128_L2_7b.yml
 
 
 nnodes=1
 nproc_per_node=1
-
 
 find_unused_port() {
     while true; do
@@ -42,5 +41,3 @@ ${llmc}/llmc/__main__.py --config $config --task_id $task_id \
 
 sleep 2
 ps aux | grep '__main__.py' | grep $task_id | awk '{print $2}' > ${task_name}.pid
-
-

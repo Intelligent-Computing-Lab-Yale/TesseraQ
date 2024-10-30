@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# export CUDA_VISIBLE_DEVICES=0,1
-
-export HF_HUB_CACHE="/gpfs/gibbs/pi/panda/yl2447/llmc/cache"
+export HF_HUB_CACHE="../llmc/cache"
 
 llmc=/gpfs/gibbs/pi/panda/yl2447/llmc
 export PYTHONPATH=$llmc:$PYTHONPATH
 
 task_name=llama2_awq_tesseraq
 # be sure to run AWQ first to save the clips/scales
-config=${llmc}/configs/quantization/llama2/tesseraq_w2_L2_7b.yml
+config=${llmc}/configs/quantization/llama2/awq_llama2.yml
 
 
 nnodes=1
